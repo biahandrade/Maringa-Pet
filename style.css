@@ -659,8 +659,8 @@ footer.rodape {
 
     .logo-pet-esq,
     .logo-pet-dir {
-        width: 45px;
-        height: 45px;
+        width: 100px !important;
+        height: 100px !important;
     }
 
     .rodape-conteudo {
@@ -686,8 +686,8 @@ footer.rodape {
     }
 
     .logo-pet {
-        width: 40px;
-        height: 40px;
+         width: 100px !important;
+        height: 100px !important;
     }
 }
 
