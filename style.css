@@ -190,6 +190,35 @@ section>div>.img {
 .logo-pet-dir {
     animation-delay: 0.6s;
 }
+.quem-somos-section {
+    position: relative;
+    overflow: hidden;
+    border-radius: 18px 18px 0 0;
+    min-height: 220px;
+    padding-top: 32px;
+    padding-bottom: 32px;
+    background: none;
+}
+
+.quem-somos-section::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url('./assets/ft1.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.28; /* ajuste a transparência aqui */
+    z-index: 0;
+    border-radius: 18px 18px 0 0;
+    pointer-events: none;
+}
+
+.quem-somos-section > * {
+    position: relative;
+    z-index: 1;
+}
+
 
 section>p,
 section>div>p {
@@ -328,7 +357,26 @@ section>div>p {
 }
 
 
+/* Imagem do serviço: sempre visível acima do texto */
+.servico-img-mobile {
+    display: none;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+    border-radius: 14px;
+    margin-bottom: 16px;
+    box-shadow: 0 2px 12px rgba(88,126,89,0.10);
+}
+
+/* Ajustes responsivos para a imagem */
 @media (max-width: 900px) {
+    .servico-img-mobile {
+          display: block;
+        max-width: 98vw;
+        height: 140px;
+        margin-bottom: 10px;
+    }
     .servico {
         flex-direction: column;
         align-items: flex-start;
@@ -340,8 +388,29 @@ section>div>p {
         min-width: 0;
     }
 
+    /* Mostra imagem mobile, esconde ::after */
     .servico::after {
-        display: none;
+        display: none !important;
+    }
+
+    .servico-img-mobile {
+        display: block;
+    }
+}
+
+@media (max-width: 600px) {
+    .servico-img-mobile {
+        max-width: 98vw;
+        height: 140px;
+        margin-bottom: 10px;
+    }
+}
+
+@media (max-width: 400px) {
+    .servico-img-mobile {
+        max-width: 96vw;
+        height: 100px;
+        margin-bottom: 6px;
     }
 }
 
@@ -446,6 +515,7 @@ footer.rodape {
     gap: 18px;
     padding-left: 30px;
     padding-right: 30px;
+    margin-bottom: 100px;
 }
 
 .rodape-conteudo p {
@@ -681,8 +751,8 @@ footer.rodape {
     }
 
     .logo {
-        width: 70px;
-        height: 70px;
+        width: 100px;
+        height: 100px;
     }
 
     .logo-pet {
